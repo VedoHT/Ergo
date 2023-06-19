@@ -184,6 +184,15 @@
   <ItemGroup>
     <None Include="Resources\rainmeter_512px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggl_app_512px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\app-OK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\line.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">

@@ -97,8 +97,11 @@ namespace InterfaceErgonomico
         {
             if (Login(false))
             {
+                this.Hide();
+                /*
                 Principal principal = new Principal();
                 principal.Show();
+                */
             }
         }
 

@@ -29,14 +29,15 @@ namespace InterfaceErgonomico
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges22 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges23 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges24 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges25 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges26 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges27 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges28 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LicenseBtn = new Bunifu.UI.WinForms.BunifuImageButton();
             this.StartLogoutBtn = new Bunifu.UI.WinForms.BunifuImageButton();
@@ -55,6 +56,9 @@ namespace InterfaceErgonomico
             this.NotificationBtn = new Bunifu.UI.WinForms.BunifuImageButton();
             this.UserLogged = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.MinimizeBtn = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.Title = new Bunifu.UI.WinForms.BunifuLabel();
+            this.Cronometro = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserLogged)).BeginInit();
@@ -115,7 +119,6 @@ namespace InterfaceErgonomico
             this.LicenseBtn.WaitOnLoad = false;
             this.LicenseBtn.Zoom = 0;
             this.LicenseBtn.ZoomSpeed = 10;
-            this.LicenseBtn.Click += new System.EventHandler(this.bunifuImageButton2_Click);
             // 
             // StartLogoutBtn
             // 
@@ -130,7 +133,7 @@ namespace InterfaceErgonomico
             this.StartLogoutBtn.ErrorImage = ((System.Drawing.Image)(resources.GetObject("StartLogoutBtn.ErrorImage")));
             this.StartLogoutBtn.FadeWhenInactive = false;
             this.StartLogoutBtn.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.StartLogoutBtn.Image = ((System.Drawing.Image)(resources.GetObject("StartLogoutBtn.Image")));
+            this.StartLogoutBtn.Image = global::InterfaceErgonomico.Properties.Resources.toggl_app_512px;
             this.StartLogoutBtn.ImageActive = null;
             this.StartLogoutBtn.ImageLocation = null;
             this.StartLogoutBtn.ImageMargin = 0;
@@ -150,7 +153,7 @@ namespace InterfaceErgonomico
             this.StartLogoutBtn.WaitOnLoad = false;
             this.StartLogoutBtn.Zoom = 0;
             this.StartLogoutBtn.ZoomSpeed = 10;
-            this.StartLogoutBtn.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            this.StartLogoutBtn.Click += new System.EventHandler(this.StartLogoutBtn_Click);
             // 
             // MoreText
             // 
@@ -184,7 +187,6 @@ namespace InterfaceErgonomico
             this.PrincipalText.Text = "Principal";
             this.PrincipalText.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.PrincipalText.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.PrincipalText.Click += new System.EventHandler(this.bunifuLabel1_Click);
             // 
             // BookBtn
             // 
@@ -205,11 +207,11 @@ namespace InterfaceErgonomico
             this.BookBtn.ColorContrastOnClick = 45;
             this.BookBtn.ColorContrastOnHover = 45;
             this.BookBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges22.BottomLeft = true;
-            borderEdges22.BottomRight = true;
-            borderEdges22.TopLeft = true;
-            borderEdges22.TopRight = true;
-            this.BookBtn.CustomizableEdges = borderEdges22;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.BookBtn.CustomizableEdges = borderEdges1;
             this.BookBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BookBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BookBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -274,6 +276,7 @@ namespace InterfaceErgonomico
             this.BookBtn.TextMarginLeft = 0;
             this.BookBtn.TextPadding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.BookBtn.UseDefaultRadiusAndThickness = true;
+            this.BookBtn.Click += new System.EventHandler(this.BookBtn_Click);
             // 
             // AboutBtn
             // 
@@ -294,11 +297,11 @@ namespace InterfaceErgonomico
             this.AboutBtn.ColorContrastOnClick = 45;
             this.AboutBtn.ColorContrastOnHover = 45;
             this.AboutBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges23.BottomLeft = true;
-            borderEdges23.BottomRight = true;
-            borderEdges23.TopLeft = true;
-            borderEdges23.TopRight = true;
-            this.AboutBtn.CustomizableEdges = borderEdges23;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.AboutBtn.CustomizableEdges = borderEdges2;
             this.AboutBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.AboutBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.AboutBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -363,6 +366,7 @@ namespace InterfaceErgonomico
             this.AboutBtn.TextMarginLeft = 0;
             this.AboutBtn.TextPadding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.AboutBtn.UseDefaultRadiusAndThickness = true;
+            this.AboutBtn.Click += new System.EventHandler(this.AboutBtn_Click);
             // 
             // DashboardBtn
             // 
@@ -383,11 +387,11 @@ namespace InterfaceErgonomico
             this.DashboardBtn.ColorContrastOnClick = 45;
             this.DashboardBtn.ColorContrastOnHover = 45;
             this.DashboardBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges24.BottomLeft = true;
-            borderEdges24.BottomRight = true;
-            borderEdges24.TopLeft = true;
-            borderEdges24.TopRight = true;
-            this.DashboardBtn.CustomizableEdges = borderEdges24;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.DashboardBtn.CustomizableEdges = borderEdges3;
             this.DashboardBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.DashboardBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.DashboardBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -452,6 +456,7 @@ namespace InterfaceErgonomico
             this.DashboardBtn.TextMarginLeft = 0;
             this.DashboardBtn.TextPadding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.DashboardBtn.UseDefaultRadiusAndThickness = true;
+            this.DashboardBtn.Click += new System.EventHandler(this.DashboardBtn_Click);
             // 
             // TimeBtn
             // 
@@ -467,16 +472,16 @@ namespace InterfaceErgonomico
             this.TimeBtn.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(43)))), ((int)(((byte)(72)))));
             this.TimeBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TimeBtn.BackgroundImage")));
             this.TimeBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.TimeBtn.ButtonText = "Tempo";
+            this.TimeBtn.ButtonText = "Cronômetro";
             this.TimeBtn.ButtonTextMarginLeft = 0;
             this.TimeBtn.ColorContrastOnClick = 45;
             this.TimeBtn.ColorContrastOnHover = 45;
             this.TimeBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges25.BottomLeft = true;
-            borderEdges25.BottomRight = true;
-            borderEdges25.TopLeft = true;
-            borderEdges25.TopRight = true;
-            this.TimeBtn.CustomizableEdges = borderEdges25;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.TimeBtn.CustomizableEdges = borderEdges4;
             this.TimeBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.TimeBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.TimeBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -541,6 +546,7 @@ namespace InterfaceErgonomico
             this.TimeBtn.TextMarginLeft = 0;
             this.TimeBtn.TextPadding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.TimeBtn.UseDefaultRadiusAndThickness = true;
+            this.TimeBtn.Click += new System.EventHandler(this.TimeBtn_Click);
             // 
             // LiquidBtn
             // 
@@ -561,11 +567,11 @@ namespace InterfaceErgonomico
             this.LiquidBtn.ColorContrastOnClick = 45;
             this.LiquidBtn.ColorContrastOnHover = 45;
             this.LiquidBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges26.BottomLeft = true;
-            borderEdges26.BottomRight = true;
-            borderEdges26.TopLeft = true;
-            borderEdges26.TopRight = true;
-            this.LiquidBtn.CustomizableEdges = borderEdges26;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.LiquidBtn.CustomizableEdges = borderEdges5;
             this.LiquidBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.LiquidBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.LiquidBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -630,6 +636,7 @@ namespace InterfaceErgonomico
             this.LiquidBtn.TextMarginLeft = 0;
             this.LiquidBtn.TextPadding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.LiquidBtn.UseDefaultRadiusAndThickness = true;
+            this.LiquidBtn.Click += new System.EventHandler(this.LiquidBtn_Click);
             // 
             // ErgoBtn
             // 
@@ -645,16 +652,16 @@ namespace InterfaceErgonomico
             this.ErgoBtn.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(43)))), ((int)(((byte)(72)))));
             this.ErgoBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ErgoBtn.BackgroundImage")));
             this.ErgoBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.ErgoBtn.ButtonText = "Ergonomia";
+            this.ErgoBtn.ButtonText = "Perfil";
             this.ErgoBtn.ButtonTextMarginLeft = 0;
             this.ErgoBtn.ColorContrastOnClick = 45;
             this.ErgoBtn.ColorContrastOnHover = 45;
             this.ErgoBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges27.BottomLeft = true;
-            borderEdges27.BottomRight = true;
-            borderEdges27.TopLeft = true;
-            borderEdges27.TopRight = true;
-            this.ErgoBtn.CustomizableEdges = borderEdges27;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.ErgoBtn.CustomizableEdges = borderEdges6;
             this.ErgoBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.ErgoBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.ErgoBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -719,6 +726,7 @@ namespace InterfaceErgonomico
             this.ErgoBtn.TextMarginLeft = 0;
             this.ErgoBtn.TextPadding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.ErgoBtn.UseDefaultRadiusAndThickness = true;
+            this.ErgoBtn.Click += new System.EventHandler(this.ErgoBtn_Click);
             // 
             // ConfigBtn
             // 
@@ -739,16 +747,16 @@ namespace InterfaceErgonomico
             this.ConfigBtn.ColorContrastOnClick = 45;
             this.ConfigBtn.ColorContrastOnHover = 45;
             this.ConfigBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges28.BottomLeft = true;
-            borderEdges28.BottomRight = true;
-            borderEdges28.TopLeft = true;
-            borderEdges28.TopRight = true;
-            this.ConfigBtn.CustomizableEdges = borderEdges28;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.ConfigBtn.CustomizableEdges = borderEdges7;
             this.ConfigBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.ConfigBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.ConfigBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.ConfigBtn.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.ConfigBtn.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.ConfigBtn.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Idle;
             this.ConfigBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ConfigBtn.ForeColor = System.Drawing.Color.White;
             this.ConfigBtn.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -793,11 +801,11 @@ namespace InterfaceErgonomico
             this.ConfigBtn.OnIdleState.ForeColor = System.Drawing.Color.White;
             this.ConfigBtn.OnIdleState.IconLeftImage = global::InterfaceErgonomico.Properties.Resources.settings_500px;
             this.ConfigBtn.OnIdleState.IconRightImage = null;
-            this.ConfigBtn.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(43)))), ((int)(((byte)(72)))));
+            this.ConfigBtn.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(31)))), ((int)(((byte)(56)))));
             this.ConfigBtn.OnPressedState.BorderRadius = 1;
             this.ConfigBtn.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.ConfigBtn.OnPressedState.BorderThickness = 1;
-            this.ConfigBtn.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(43)))), ((int)(((byte)(72)))));
+            this.ConfigBtn.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(31)))), ((int)(((byte)(56)))));
             this.ConfigBtn.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.ConfigBtn.OnPressedState.IconLeftImage = null;
             this.ConfigBtn.OnPressedState.IconRightImage = null;
@@ -809,6 +817,7 @@ namespace InterfaceErgonomico
             this.ConfigBtn.TextMarginLeft = 0;
             this.ConfigBtn.TextPadding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.ConfigBtn.UseDefaultRadiusAndThickness = true;
+            this.ConfigBtn.Click += new System.EventHandler(this.ConfigBtn_Click);
             // 
             // Logo
             // 
@@ -826,6 +835,7 @@ namespace InterfaceErgonomico
             this.Logo.TabIndex = 0;
             this.Logo.TabStop = false;
             this.Logo.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            this.Logo.Click += new System.EventHandler(this.Logo_Click);
             // 
             // bunifuImageButton1
             // 
@@ -948,6 +958,7 @@ namespace InterfaceErgonomico
             this.UserLogged.TabIndex = 4;
             this.UserLogged.TabStop = false;
             this.UserLogged.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            this.UserLogged.Click += new System.EventHandler(this.UserLogged_Click);
             // 
             // MinimizeBtn
             // 
@@ -985,6 +996,40 @@ namespace InterfaceErgonomico
             this.MinimizeBtn.ZoomSpeed = 10;
             this.MinimizeBtn.Click += new System.EventHandler(this.MinimizeBtn_Click);
             // 
+            // Title
+            // 
+            this.Title.AllowParentOverrides = false;
+            this.Title.AutoEllipsis = false;
+            this.Title.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Title.CursorType = System.Windows.Forms.Cursors.Default;
+            this.Title.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.Title.Location = new System.Drawing.Point(253, 6);
+            this.Title.Name = "Title";
+            this.Title.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Title.Size = new System.Drawing.Size(45, 30);
+            this.Title.TabIndex = 8;
+            this.Title.Text = "teste";
+            this.Title.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.Title.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // Cronometro
+            // 
+            this.Cronometro.AutoSize = true;
+            this.Cronometro.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cronometro.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.Cronometro.Location = new System.Drawing.Point(474, 168);
+            this.Cronometro.Name = "Cronometro";
+            this.Cronometro.Size = new System.Drawing.Size(386, 76);
+            this.Cronometro.TabIndex = 9;
+            this.Cronometro.Text = "00:00:00.00";
+            this.Cronometro.Visible = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -992,6 +1037,8 @@ namespace InterfaceErgonomico
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(39)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(1076, 644);
+            this.Controls.Add(this.Cronometro);
+            this.Controls.Add(this.Title);
             this.Controls.Add(this.MinimizeBtn);
             this.Controls.Add(this.UserLogged);
             this.Controls.Add(this.NotificationBtn);
@@ -1005,12 +1052,14 @@ namespace InterfaceErgonomico
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ergo";
+            this.Load += new System.EventHandler(this.Principal_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserLogged)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1034,6 +1083,9 @@ namespace InterfaceErgonomico
         private Bunifu.UI.WinForms.BunifuImageButton NotificationBtn;
         private Bunifu.UI.WinForms.BunifuPictureBox UserLogged;
         private Bunifu.UI.WinForms.BunifuImageButton MinimizeBtn;
+        private Bunifu.UI.WinForms.BunifuLabel Title;
+        private System.Windows.Forms.Label Cronometro;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

@@ -73,6 +73,16 @@ namespace InterfaceErgonomico.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap app_OK {
+            get {
+                object obj = ResourceManager.GetObject("app-OK", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Checkmark_208px {
             get {
                 object obj = ResourceManager.GetObject("Checkmark_208px", resourceCulture);
@@ -143,6 +153,16 @@ namespace InterfaceErgonomico.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap line {
+            get {
+                object obj = ResourceManager.GetObject("line", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logotipo {
             get {
                 object obj = ResourceManager.GetObject("Logotipo", resourceCulture);
@@ -166,6 +186,16 @@ namespace InterfaceErgonomico.Properties {
         internal static System.Drawing.Bitmap settings_500px {
             get {
                 object obj = ResourceManager.GetObject("settings_500px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap toggl_app_512px {
+            get {
+                object obj = ResourceManager.GetObject("toggl_app_512px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

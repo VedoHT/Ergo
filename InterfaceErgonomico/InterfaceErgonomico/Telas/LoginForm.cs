@@ -12,6 +12,7 @@ using FireSharp.Response;
 using FireSharp.Interfaces;
 using InterfaceErgonomico.Models;
 using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace InterfaceErgonomico
 {
@@ -30,6 +31,10 @@ namespace InterfaceErgonomico
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr one, int two, int three, int four);
+
+        public static string UsuarioValor = "";
+        public static Stopwatch stopwatchValida;
+        public bool logado;
 
         public LoginForm()
         {
@@ -95,13 +100,12 @@ namespace InterfaceErgonomico
         //Botão de login
         private void LoginBtn_Click(object sender, EventArgs e)
         {
+            stopwatchValida = new Stopwatch();
             if (Login(false))
             {
+                logado = true;
                 this.Hide();
-                /*
-                Principal principal = new Principal();
-                principal.Show();
-                */
+                stopwatchValida.Start();
             }
         }
 
@@ -135,27 +139,68 @@ namespace InterfaceErgonomico
                     return false;
                 }
 
-                char gender = 'N';
-                if (SexF.Checked)
-                    gender = 'F';
-                else if (SexM.Checked)
-                    gender = 'M';
-                else
-                    gender = 'X';
+                if (string.IsNullOrEmpty(UsuarioBtn.Text) ||
+                    string.IsNullOrEmpty(PasswordText.Text))
+                {
+                    MessageBox.Show("Usuário ou senha inválidos.");
+                    return false;
+                }
+
+                if (string.IsNullOrEmpty(NameText.Text) ||
+                    string.IsNullOrEmpty(SobrenomeText.Text))
+                {
+                    MessageBox.Show("Nome ou sobrenome não preenchidos.");
+                    return false;
+                }
+
+                if (PasswordText.Text.Length < 6)
+                {
+                    MessageBox.Show("Senha deve possuir no mínimo 6 caracteres.");
+                    return false;
+                }
+
+                if (DtaNascimento.Value.Date.Year > 2013)
+                {
+                    MessageBox.Show("Usuário deve possuir mais de 10 anos de idade.");
+                    return false;
+                }
 
                 UsuarioRegister registerUser = new UsuarioRegister()
                 {
                     Username = UsuarioBtn.Text,
                     Password = PasswordText.Text,
-                    Name = NameText.Text,
-                    OtherName = SobrenomeText.Text,
+                    NameComplete = $"{NameText.Text} {SobrenomeText.Text}",
+                    BornDate = DtaNascimento.Value.Date
+                };
+
+                PerfilUsuario perfilCompleto = new PerfilUsuario()
+                {
+                    Username = UsuarioBtn.Text,
+                    NameComplete = $"{NameText.Text} {SobrenomeText.Text}",
+                    Email = "",
                     BornDate = DtaNascimento.Value.Date,
-                    Gender = gender
+                    Phone = "",
+                    Height = null,
+                    Weight = null,
+                    NameOrg = "",
+                    ProfilePic = null,
+                };
+
+                Config configUsuario = new Config()
+                {
+                    Username = UsuarioBtn.Text,
+                    PermitirNotif = true,
+                    Minimizar = false,
+                    TempoAgua = 45,
+                    TempoPe = 45,
+                    Idioma = 1,
                 };
 
                 try
                 {
-                    SetResponse set = client.Set(@"Users/" + UsuarioBtn.Text, registerUser);
+                    SetResponse set = client.Set(@"Usuarios/" + UsuarioBtn.Text, registerUser);
+                    SetResponse setComplete = client.Set(@"UsersComplete/" + UsuarioBtn.Text, perfilCompleto);
+                    SetResponse setConfig = client.Set(@"UsersConfig/" + UsuarioBtn.Text, configUsuario);
 
                     MessageBox.Show("Registrado com Sucesso!");
                     return true;
@@ -177,7 +222,7 @@ namespace InterfaceErgonomico
 
                 try
                 {
-                    FirebaseResponse res = client.Get(@"Users/" + UsernameTextBtn.Text);
+                    FirebaseResponse res = client.Get(@"Usuarios/" + UsernameTextBtn.Text);
                     UsuarioLogin resUser = res.ResultAs<UsuarioLogin>();
                     UsuarioLogin curUser = new UsuarioLogin()
                     {
@@ -197,6 +242,7 @@ namespace InterfaceErgonomico
                             MessageBox.Show("Senha está incorreta");
                             return false;
                         case 'O':
+                            UsuarioValor = UsernameTextBtn.Text;
                             return true;
                         default: 
                             return false;
@@ -260,10 +306,6 @@ namespace InterfaceErgonomico
                 SobrenomeText.Visible = true;
                 DtaNascimentoRegisterTxt.Visible = true;
                 DtaNascimento.Visible = true;
-                SexoRegisterTxt.Visible = true;
-                SexM.Visible = true;
-                SexF.Visible = true;
-                SexX.Visible = true;
                 UsuarioRegisterTxt.Visible = true;
                 UsuarioBtn.Visible = true;
                 SenhaRegisterTxt.Visible = true;
@@ -295,10 +337,6 @@ namespace InterfaceErgonomico
                 SobrenomeText.Visible = false;
                 DtaNascimentoRegisterTxt.Visible = false;
                 DtaNascimento.Visible = false;
-                SexoRegisterTxt.Visible = false;
-                SexM.Visible = false;
-                SexF.Visible = false;
-                SexX.Visible = false;
                 UsuarioRegisterTxt.Visible = false;
                 UsuarioBtn.Visible = false;
                 SenhaRegisterTxt.Visible = false;
@@ -324,6 +362,24 @@ namespace InterfaceErgonomico
         {
             ReleaseCapture();
             SendMessage(Handle, 0x112, 0xf012, 0);
+        }
+
+        private void NameText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && !(char.IsControl(e.KeyChar)))
+                e.Handled = true;
+        }
+
+        private void SobrenomeText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && !(char.IsControl(e.KeyChar)))
+                e.Handled = true;        
+        }
+
+        private void UsernameTextBtn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && !(char.IsControl(e.KeyChar)))
+                e.Handled = true;
         }
     }
 }

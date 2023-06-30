@@ -83,9 +83,39 @@ namespace InterfaceErgonomico.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Checkdown {
+            get {
+                object obj = ResourceManager.GetObject("Checkdown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Checkmark_208px {
             get {
                 object obj = ResourceManager.GetObject("Checkmark_208px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Checkmark_208px1 {
+            get {
+                object obj = ResourceManager.GetObject("Checkmark_208px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CheckUP {
+            get {
+                object obj = ResourceManager.GetObject("CheckUP", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -121,6 +151,16 @@ namespace InterfaceErgonomico.Properties {
         }
         
         /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GraphicIcon {
+            get {
+                object obj = ResourceManager.GetObject("GraphicIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
         /// </summary>
         internal static System.Drawing.Icon Icon {
@@ -136,6 +176,16 @@ namespace InterfaceErgonomico.Properties {
         internal static System.Drawing.Bitmap idea_500px {
             get {
                 object obj = ResourceManager.GetObject("idea_500px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgprofile {
+            get {
+                object obj = ResourceManager.GetObject("imgprofile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,6 +223,26 @@ namespace InterfaceErgonomico.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Pause {
+            get {
+                object obj = ResourceManager.GetObject("Pause", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus___500px {
+            get {
+                object obj = ResourceManager.GetObject("plus_+_500px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rainmeter_512px {
             get {
                 object obj = ResourceManager.GetObject("rainmeter_512px", resourceCulture);
@@ -193,9 +263,49 @@ namespace InterfaceErgonomico.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Sitguy {
+            get {
+                object obj = ResourceManager.GetObject("Sitguy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sitpressed {
+            get {
+                object obj = ResourceManager.GetObject("Sitpressed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap toggl_app_512px {
             get {
                 object obj = ResourceManager.GetObject("toggl_app_512px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Upguy {
+            get {
+                object obj = ResourceManager.GetObject("Upguy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UpPressed {
+            get {
+                object obj = ResourceManager.GetObject("UpPressed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -36,3 +36,10 @@ F:\Estudos\C#\InterfaceErgonomico\InterfaceErgonomico\InterfaceErgonomico\bin\De
 F:\Estudos\C#\InterfaceErgonomico\InterfaceErgonomico\InterfaceErgonomico\bin\Debug\System.Net.Http.Primitives.xml
 F:\Estudos\C#\InterfaceErgonomico\InterfaceErgonomico\InterfaceErgonomico\obj\Debug\InterfaceErgonomico.csproj.App.config
 F:\Estudos\C#\InterfaceErgonomico\InterfaceErgonomico\InterfaceErgonomico\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.dll
+F:\Estudos\C#\InterfaceErgonomico\InterfaceErgonomico\InterfaceErgonomico\bin\Debug\en-US\InterfaceErgonomico.resources.dll
+F:\Estudos\C#\InterfaceErgonomico\InterfaceErgonomico\InterfaceErgonomico\bin\Debug\pt-BR\InterfaceErgonomico.resources.dll
+F:\Estudos\C#\InterfaceErgonomico\InterfaceErgonomico\InterfaceErgonomico\obj\Debug\InterfaceErgonomico.Principal.en-US.resources
+F:\Estudos\C#\InterfaceErgonomico\InterfaceErgonomico\InterfaceErgonomico\obj\Debug\InterfaceErgonomico.Principal.pt-BR.resources
+F:\Estudos\C#\InterfaceErgonomico\InterfaceErgonomico\InterfaceErgonomico\obj\Debug\en-US\InterfaceErgonomico.resources.dll
+F:\Estudos\C#\InterfaceErgonomico\InterfaceErgonomico\InterfaceErgonomico\obj\Debug\pt-BR\InterfaceErgonomico.resources.dll
+F:\Estudos\C#\InterfaceErgonomico\InterfaceErgonomico\InterfaceErgonomico\bin\Debug\sitguyNOTIF.ico

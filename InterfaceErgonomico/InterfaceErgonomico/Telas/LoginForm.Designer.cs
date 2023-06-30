@@ -74,13 +74,9 @@ namespace InterfaceErgonomico
             this.ConfirmButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.SenhaRegisterTxt = new Bunifu.UI.WinForms.BunifuLabel();
             this.UsuarioRegisterTxt = new Bunifu.UI.WinForms.BunifuLabel();
-            this.SexoRegisterTxt = new Bunifu.UI.WinForms.BunifuLabel();
             this.DtaNascimentoRegisterTxt = new Bunifu.UI.WinForms.BunifuLabel();
             this.SobrenomeRegisterTxt = new Bunifu.UI.WinForms.BunifuLabel();
             this.NameRegisterTxt = new Bunifu.UI.WinForms.BunifuLabel();
-            this.SexX = new System.Windows.Forms.RadioButton();
-            this.SexF = new System.Windows.Forms.RadioButton();
-            this.SexM = new System.Windows.Forms.RadioButton();
             this.DtaNascimento = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.PasswordText = new Bunifu.UI.WinForms.BunifuTextBox();
             this.UsuarioBtn = new Bunifu.UI.WinForms.BunifuTextBox();
@@ -293,6 +289,7 @@ namespace InterfaceErgonomico
             this.UsernameTextBtn.TextPlaceholder = "Usuário";
             this.UsernameTextBtn.UseSystemPasswordChar = false;
             this.UsernameTextBtn.WordWrap = true;
+            this.UsernameTextBtn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsernameTextBtn_KeyPress);
             // 
             // PasswordBtn
             // 
@@ -570,13 +567,9 @@ namespace InterfaceErgonomico
             this.bunifuPanel1.Controls.Add(this.ConfirmButton);
             this.bunifuPanel1.Controls.Add(this.SenhaRegisterTxt);
             this.bunifuPanel1.Controls.Add(this.UsuarioRegisterTxt);
-            this.bunifuPanel1.Controls.Add(this.SexoRegisterTxt);
             this.bunifuPanel1.Controls.Add(this.DtaNascimentoRegisterTxt);
             this.bunifuPanel1.Controls.Add(this.SobrenomeRegisterTxt);
             this.bunifuPanel1.Controls.Add(this.NameRegisterTxt);
-            this.bunifuPanel1.Controls.Add(this.SexX);
-            this.bunifuPanel1.Controls.Add(this.SexF);
-            this.bunifuPanel1.Controls.Add(this.SexM);
             this.bunifuPanel1.Controls.Add(this.DtaNascimento);
             this.bunifuPanel1.Controls.Add(this.PasswordText);
             this.bunifuPanel1.Controls.Add(this.UsuarioBtn);
@@ -831,23 +824,6 @@ namespace InterfaceErgonomico
             this.UsuarioRegisterTxt.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             this.UsuarioRegisterTxt.Visible = false;
             // 
-            // SexoRegisterTxt
-            // 
-            this.SexoRegisterTxt.AllowParentOverrides = false;
-            this.SexoRegisterTxt.AutoEllipsis = false;
-            this.SexoRegisterTxt.CursorType = null;
-            this.SexoRegisterTxt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SexoRegisterTxt.ForeColor = System.Drawing.Color.Gray;
-            this.SexoRegisterTxt.Location = new System.Drawing.Point(282, 60);
-            this.SexoRegisterTxt.Name = "SexoRegisterTxt";
-            this.SexoRegisterTxt.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.SexoRegisterTxt.Size = new System.Drawing.Size(33, 21);
-            this.SexoRegisterTxt.TabIndex = 30;
-            this.SexoRegisterTxt.Text = "Sexo";
-            this.SexoRegisterTxt.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.SexoRegisterTxt.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.SexoRegisterTxt.Visible = false;
-            // 
             // DtaNascimentoRegisterTxt
             // 
             this.DtaNascimentoRegisterTxt.AllowParentOverrides = false;
@@ -898,41 +874,6 @@ namespace InterfaceErgonomico
             this.NameRegisterTxt.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.NameRegisterTxt.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             this.NameRegisterTxt.Visible = false;
-            // 
-            // SexX
-            // 
-            this.SexX.AutoSize = true;
-            this.SexX.Location = new System.Drawing.Point(377, 82);
-            this.SexX.Name = "SexX";
-            this.SexX.Size = new System.Drawing.Size(51, 17);
-            this.SexX.TabIndex = 26;
-            this.SexX.Text = "Outro";
-            this.SexX.UseVisualStyleBackColor = true;
-            this.SexX.Visible = false;
-            // 
-            // SexF
-            // 
-            this.SexF.AutoSize = true;
-            this.SexF.Location = new System.Drawing.Point(332, 82);
-            this.SexF.Name = "SexF";
-            this.SexF.Size = new System.Drawing.Size(31, 17);
-            this.SexF.TabIndex = 25;
-            this.SexF.Text = "F";
-            this.SexF.UseVisualStyleBackColor = true;
-            this.SexF.Visible = false;
-            // 
-            // SexM
-            // 
-            this.SexM.AutoSize = true;
-            this.SexM.Checked = true;
-            this.SexM.Location = new System.Drawing.Point(281, 82);
-            this.SexM.Name = "SexM";
-            this.SexM.Size = new System.Drawing.Size(34, 17);
-            this.SexM.TabIndex = 24;
-            this.SexM.TabStop = true;
-            this.SexM.Text = "M";
-            this.SexM.UseVisualStyleBackColor = true;
-            this.SexM.Visible = false;
             // 
             // DtaNascimento
             // 
@@ -992,7 +933,7 @@ namespace InterfaceErgonomico
             this.PasswordText.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.PasswordText.Lines = new string[0];
             this.PasswordText.Location = new System.Drawing.Point(483, 82);
-            this.PasswordText.MaxLength = 32767;
+            this.PasswordText.MaxLength = 20;
             this.PasswordText.MinimumSize = new System.Drawing.Size(1, 1);
             this.PasswordText.Modified = false;
             this.PasswordText.Multiline = false;
@@ -1068,7 +1009,7 @@ namespace InterfaceErgonomico
             this.UsuarioBtn.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.UsuarioBtn.Lines = new string[0];
             this.UsuarioBtn.Location = new System.Drawing.Point(483, 22);
-            this.UsuarioBtn.MaxLength = 32767;
+            this.UsuarioBtn.MaxLength = 20;
             this.UsuarioBtn.MinimumSize = new System.Drawing.Size(1, 1);
             this.UsuarioBtn.Modified = false;
             this.UsuarioBtn.Multiline = false;
@@ -1144,7 +1085,7 @@ namespace InterfaceErgonomico
             this.SobrenomeText.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.SobrenomeText.Lines = new string[0];
             this.SobrenomeText.Location = new System.Drawing.Point(62, 82);
-            this.SobrenomeText.MaxLength = 32767;
+            this.SobrenomeText.MaxLength = 60;
             this.SobrenomeText.MinimumSize = new System.Drawing.Size(1, 1);
             this.SobrenomeText.Modified = false;
             this.SobrenomeText.Multiline = false;
@@ -1190,6 +1131,7 @@ namespace InterfaceErgonomico
             this.SobrenomeText.UseSystemPasswordChar = false;
             this.SobrenomeText.Visible = false;
             this.SobrenomeText.WordWrap = true;
+            this.SobrenomeText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SobrenomeText_KeyPress);
             // 
             // NameText
             // 
@@ -1220,7 +1162,7 @@ namespace InterfaceErgonomico
             this.NameText.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.NameText.Lines = new string[0];
             this.NameText.Location = new System.Drawing.Point(62, 22);
-            this.NameText.MaxLength = 32767;
+            this.NameText.MaxLength = 50;
             this.NameText.MinimumSize = new System.Drawing.Size(1, 1);
             this.NameText.Modified = false;
             this.NameText.Multiline = false;
@@ -1266,6 +1208,7 @@ namespace InterfaceErgonomico
             this.NameText.UseSystemPasswordChar = false;
             this.NameText.Visible = false;
             this.NameText.WordWrap = true;
+            this.NameText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameText_KeyPress);
             // 
             // ConnectionStatus
             // 
@@ -1432,9 +1375,6 @@ namespace InterfaceErgonomico
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton RegisterBtn;
         private Bunifu.UI.WinForms.BunifuLabel ConnectionStatus;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
-        private System.Windows.Forms.RadioButton SexX;
-        private System.Windows.Forms.RadioButton SexF;
-        private System.Windows.Forms.RadioButton SexM;
         private Bunifu.UI.WinForms.BunifuDatePicker DtaNascimento;
         private Bunifu.UI.WinForms.BunifuTextBox PasswordText;
         private Bunifu.UI.WinForms.BunifuTextBox UsuarioBtn;
@@ -1442,7 +1382,6 @@ namespace InterfaceErgonomico
         private Bunifu.UI.WinForms.BunifuTextBox NameText;
         private Bunifu.UI.WinForms.BunifuLabel SenhaRegisterTxt;
         private Bunifu.UI.WinForms.BunifuLabel UsuarioRegisterTxt;
-        private Bunifu.UI.WinForms.BunifuLabel SexoRegisterTxt;
         private Bunifu.UI.WinForms.BunifuLabel DtaNascimentoRegisterTxt;
         private Bunifu.UI.WinForms.BunifuLabel SobrenomeRegisterTxt;
         private Bunifu.UI.WinForms.BunifuLabel NameRegisterTxt;

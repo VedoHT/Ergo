@@ -14,9 +14,47 @@ namespace InterfaceErgonomico.Models
 
     public class UsuarioRegister : UsuarioLogin
     {
-        public string Name { get; set; }
-        public string OtherName { get; set; }
-        public char Gender { get; set; }
+        public string NameComplete { get; set; }
         public DateTime BornDate { get; set; }
+    }
+
+    public class PerfilUsuario
+    {
+        public string Username { get; set; }
+        public string NameComplete { get; set; }
+        public string Email { get; set; }
+        public DateTime BornDate { get; set; }
+        public string Phone { get; set; }
+        public int? Height { get; set; }
+        public int? Weight { get; set; }
+        public string NameOrg { get; set; }
+        public byte[] ProfilePic { get; set; }
+    }
+
+    public class Config
+    {
+        public string Username { get; set; }
+        public bool PermitirNotif { get; set; }
+        public bool Minimizar { get; set; }
+        public int TempoPe { get; set; }
+        public int TempoAgua { get; set; }
+        public int Idioma { get; set; }
+    }
+
+    public class Graficos
+    {
+        public string Username { get; set; }
+        public int? Altura { get; set; }
+        public int? Peso { get; set; }
+        public bool Pizza { get; set; }
+        public TimeSpan TempoSentado { get; set; }
+        public TimeSpan TempoPe { get; set; }
+        public double? Count { get; set; }
+        public string NomeGrafico { get; set; }
+    }
+
+    public class Pdfs
+    {
+        public string PdfErgo { get; set; }
     }
 }

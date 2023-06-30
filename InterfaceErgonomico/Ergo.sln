@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.33027.164
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceErgonomico", "InterfaceErgonomico\InterfaceErgonomico.csproj", "{ADEA0457-45FE-4B0B-A669-8ABF5A19ED89}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ergo", "InterfaceErgonomico\Ergo.csproj", "{ADEA0457-45FE-4B0B-A669-8ABF5A19ED89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

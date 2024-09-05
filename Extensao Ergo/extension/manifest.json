@@ -1,0 +1,23 @@
+{
+    "name": "Ergo",
+    "version": "1.0",
+    "manifest_version": 3,
+    "author": "Gabriel",
+    "description": "Essa extensão serve como cronometro para ergonomia no computador",
+    "permissions": [
+        "scripting",
+        "activeTab",
+        "tabs",
+        "storage"
+    ],
+    "action": {
+        "default_title": "Controle Ergo",
+        "default_popup": "popup.html"
+    },
+    "icons": {
+        "16": "img/16.png",
+        "48": "img/48.png",
+        "128": "img/128.png"
+    }  
+
+}

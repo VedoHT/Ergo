@@ -1,0 +1,7 @@
+﻿[*.cs]
+
+# S1994: "for" loop increment clauses should modify the loops' counters
+dotnet_diagnostic.S1994.severity = none
+
+# S3923: All branches in a conditional structure should not have exactly the same implementation
+dotnet_diagnostic.S3923.severity = none

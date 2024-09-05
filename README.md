@@ -7,6 +7,9 @@
   - Firebase;
   - Windows Form;
   - LucidChart;
+  - CSS;
+  - HTML;
+  - Javascript;
 
 **OBSERVAÇÃO**
   Neste README não serão detalhados os módulos e códigos em questão. Somente será explicado e demonstrado
@@ -155,3 +158,13 @@
   encaminhado para a aba de “Dicas E-book”.
 
   ![](https://i.imgur.com/TOLGskc.png)
+
+
+  ## Extensão de navegador
+  Foi também criado de acompanhamento uma extensão de navegador que utiliza de um cronômetro 
+  interno para rodar ao serviço de cronometragem do programa desktop. 
+  OBS: Foi criado somente o visual e o script de cronometragem, devido ao tempo limite do BD
+  não foi integrado ao mesmo, sendo assim, ele funciona a parte e sem integração ao desktop.
+
+  ![](https://i.imgur.com/VebUGA5.png)
+  

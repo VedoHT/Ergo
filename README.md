@@ -8,6 +8,10 @@
   - Windows Form;
   - LucidChart;
 
+**OBSERVAÇÃO**
+  Neste README não serão detalhados os módulos e códigos em questão. Somente será explicado e demonstrado
+  o software em si e suas funcionalidades.
+
 ## Diagramas de casos de uso
   O sistema possui somente um caso de uso: usuário utilizador, onde o mesmo
   fará uso do sistema em todas as etapas. A ferramenta utilizada para a criação deste
@@ -23,7 +27,7 @@
   NameComplete, Password e BornDate. A entidade UsersComplete possuímos
   Username como identificador único que relaciona a entidade Usuarios, além de
   possuir Email, NameComplete, Phone, ProfilePic e BornDate. Já a entidade
-  UsersConfig possui Username como identificador único que relaciona a Usuarios, 12
+  UsersConfig possui Username como identificador único que relaciona a Usuarios,
   além de possuir as Idioma, Minimizar, PermitirNotif e TempoPe. Também se possui
   a entidade Graficos, onde possuímos Username como identificador único que se
   relaciona com a entidade Usuarios e também Count como identificador único, além

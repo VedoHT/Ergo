@@ -1,4 +1,4 @@
-# C# + Windows Form + Firebase
+# C# + Windows Form + Firebase + Extensão de navegador (html/css/javascript)
 # Trabalho de TCC (Final Paper)
   Este projeto contém um conjunto de códigos relacionados ao meu trabalho de conclusão de curso (TCC).
 
